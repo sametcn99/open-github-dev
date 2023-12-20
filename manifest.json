@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "GitHub.dev Opener",
+    "version": "1.0",
+    "description": "Open GitHub repository in github.dev",
+    "permissions": [
+        "activeTab"
+    ],
+    "action": {
+        "default_title": "Open on GitHub.dev"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://github.com/*"
+            ],
+            "js": [
+                "content.js"
+            ]
+        }
+    ]
+}
